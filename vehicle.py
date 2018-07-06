@@ -1,5 +1,8 @@
 class Vehicle:
+    ''' def __init__() is Vehicle class constructor'''
+    
     def __init__(self, name, manufacturer, color):
+        print ("Creating a vehicle")
         self.name = name
         self.manufacturer = manufacturer
         self.color = color
@@ -14,13 +17,13 @@ class Vehicle:
         print(self.name,"is stopping!")
 
 class Car(Vehicle):
-
-    def __init__(self, name, manufac, color, year):
-        self.name = name
-        self.manufac = manufac
-        self.color = color
+    ''' def __init__() is car class constructor'''
+    def __init__(self, name, manufacturer, color, year):
+        print ("Creating a car")
+        super().__init__(name,manufacturer, color)
         self.year = 2018
         self.wheels = 4
+    
         print ("A new car has been created. Name:",self.name)
         print("It has",self.wheels, "wheels")
         print ("The car was built in",self.year)
@@ -28,9 +31,20 @@ class Car(Vehicle):
     def change_gear(self,gear_name):
         print(self.name, "is changing gear to", gear_name)
 
+    def turn(self, direction):
+        print (self.name, "is turning", direction)
+    
+
 if __name__ == "__main__":
 
     c = Car("Mustang 5.0 GT Coupe", "Ford","RED",2012)
+    print (c.name,c.year,c.wheels)
+    
+    '''
+    v = Vehicle("Softail Delux", "Harley-Davidson", "BLUE")
+    c.turn("right")
+    v.turn("left")
+'''
     #c.drive()
     #c.brake()
     #c. change_gear('P')
