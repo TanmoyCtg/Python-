@@ -14,3 +14,29 @@ print (dir(response))
 print (response.ok)
 print(response.status_code)
 print(response.reason)
+print(response.encoding)
+print (response.json)
+
+# now get the html text
+# grab the url, use the text
+
+res = r.get("http://example.com")
+print (res.ok)
+
+getHtmlText = res.text
+
+#what type getHtmlText is ?
+
+print (type(getHtmlText))
+
+print (getHtmlText)
+
+fp = open ("html.txt","w")
+# write in the file
+fileWrite = fp.write("This file was created using python")
+#close file
+
+fp.close()
+
+print(type(fileWrite))
+print (fp)
